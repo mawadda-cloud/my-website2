@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Home</title>
+</head>
+<body class="body1">
+
+    <nav>
+        <i class="fas fa-plane"></i>
+        <a href="first.html">Home</a>
+        <a href="second.html">About Us</a>
+        <a href="third.html">Contact Us</a> 
+
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="search here.." oninput="search()" />
+            <button onclick="search()">Search</button>
+        </div>
+
+      </nav>
+      
+      <div class="image-container">
+        <img id="image1" src="" alt="photo1" style="display:none;">
+        <img id="image2" src="" alt="photo2" style="display:none;">
+    </div>
+    <div class="head">
+  <h1>TO THE LAND OF DREAMS</h1> 
+  <p id="p1">Welcom to our website for travel recommendations.</br>
+    We will help you discover the most beutiful places in the world and visit them at reasonable prices and with a comfortable and happy trip.
+  </p> 
+  <button>BOOK NOW</button></a>
+</div>
+
+<script>
+    function search() {
+        var searchQuery = document.getElementById("search-box").value.toLowerCase();
+        var image1 = document.getElementById("image1");
+        var image2 = document.getElementById("image2");
+
+        if (searchQuery === "napili") {
+                image1.src = "images/beach1.jpg"; 
+                image2.src = "images/beach2.jpg";
+            } else if (searchQuery === "temple of heaven") {
+                image1.src = "images/temple1.jpg";
+                image2.src = "images/temple2.jpg";
+            } else if (searchQuery === "dubai") {
+                image1.src = "images/dubai1.jpg";
+                image2.src = "images/dubai2.jpg";
+            }else {
+                image1.style.display = "none";
+                image2.style.display = "none";
+                return;
+            }
+
+            image1.style.display = "inline";
+            image2.style.display = "inline";
+    } 
+</script>
+</body>
+</html>
